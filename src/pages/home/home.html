@@ -1,14 +1,223 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+        welcome to QUIZZ!!!
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding class="frontpage">
+  
+  <h1 text-center>PLEASE SELECT YOUR CATEGORY:</h1>
+  <ion-list >
+    <ion-item class="dropbox" >
+      <ion-label style="color:black">select category:</ion-label>
+      <ion-select  [(ngModel)]="category" name="categories">
+          
+  <ion-option  *ngFor="let category of categories" [value]="category">{{category}}</ion-option>
+       </ion-select>
+</ion-item>
+</ion-list>
+    
+         <ion-card-content  style="background-color: greenyellow" *ngIf ="category==='soccer'" >
+         
+         
+           
+              
+                  <ion-item >
+              <ion-label>who won the world cup in 1998?</ion-label>
+              <ion-select  value="france" [(ngModel)]="soccerAns1">
+        <ion-option >italy</ion-option>
+        <ion-option value="france">france</ion-option>
+              </ion-select>
+              </ion-item>
+        
+
+ 
+                    
+              
+                    <ion-item>
+                         <ion-label>who scored with the hand of God?</ion-label>
+                          <ion-select value="maradona" [(ngModel)]="soccerAns2">
+               <ion-option value="maradona">maradona</ion-option>
+              <ion-option>terry henry</ion-option>
+                       </ion-select>
+                        </ion-item>
+                    
+
+                    <ion-item>
+                        <ion-label>which team is the most successful in the world cup?</ion-label>
+                        <ion-select value="brazil" [(ngModel)]="soccerAns3">
+                  <ion-option >france</ion-option>
+                  <ion-option value="brazil">brazil</ion-option>
+                        </ion-select>
+                        </ion-item>
+              
+              
+  
+             
+                    <ion-item>
+                        <ion-label>which club is the most successful team in england premier league?</ion-label>
+                        <ion-select   value="manchester" [(ngModel)]="soccerAns4">
+                  <ion-option >liverpool</ion-option>
+                  <ion-option value="manchester">manchester united</ion-option>
+                        </ion-select>
+                        </ion-item>
+
+               
+
+                  <ion-item>
+                      <ion-label>which club is the most successful team in the champoins league?</ion-label>
+                      <ion-select value="realmadrid" [(ngModel)]="soccerAns5">
+                <ion-option >barcelona</ion-option>
+                <ion-option value="realmadrid">real madrid</ion-option>
+                      </ion-select>
+                      </ion-item>
+
+                 
+                <ion-buttons end>
+                  <button ion-button (click)="totalSoccerScores()">submit</button>
+                </ion-buttons>
+            <p>total score:{{totalSoccerScore}}/10</p>
+                 
+          
+                
+              </ion-card-content>
+                  
+     
+      
+        <ion-card-content style="background-color: orchid" *ngIf ="category==='movies'">
+          
+            
+            <ion-item>
+              <ion-label>who played brain o conner?</ion-label>
+              <ion-select value="paul" [(ngModel)]="movieAns1">
+                  <ion-option >vin diesil</ion-option>
+                  <ion-option value="paul">paul walker</ion-option>
+                        </ion-select>
+                        </ion-item>
+            
+
+            
+                <ion-item>
+                <ion-label>highest grossing film of all time?</ion-label>
+              
+                <ion-select value="avatar" [(ngModel)]="movieAns2">
+                    <ion-option >titanic</ion-option>
+                    <ion-option value="avatar">avatar</ion-option>
+                          </ion-select>
+                          </ion-item>
+              
+              
+              <ion-item>
+                  <ion-label>how many harry potter books are there?</ion-label>
+                  <ion-select value="seven" [(ngModel)]="movieAns3">
+                      <ion-option >six</ion-option>
+                      <ion-option value="seven">seven</ion-option>
+                            </ion-select>
+                            </ion-item>
+                
+        
+            
+            <ion-item>
+                <ion-label>which female actress won a oscar for her role in monster?</ion-label>
+                <ion-select value="cherlize" [(ngModel)]="movieAns4">
+                    <ion-option >angelina jolie</ion-option>
+                    <ion-option value="cherlize">cherlize theron</ion-option>
+                          </ion-select>
+                          </ion-item>
+              
+       
+        
+          
+          <ion-item>
+              <ion-label>whos plays daenerys targaryen in game of thrones?</ion-label>
+              <ion-select value="clarke" [(ngModel)]="movieAns5">
+                  <ion-option >sophie turner</ion-option>
+                  <ion-option value="clarke">emilia clarke</ion-option>
+                        </ion-select>
+                        </ion-item>
+
+
+            <ion-buttons end>
+                <button ion-button color="secondary" (click)="totalMovieScores()">submit</button>
+              </ion-buttons>
+          <p>total:{{totalMovieScore}}/10</p>
+        
+        </ion-card-content>
+  
+
+        <!-- third categories -->
+        <ion-card-content style="background-color: yellow" *ngIf ="category==='history'">
+            
+           
+               
+                <ion-item>
+                        <ion-label>who was the first white man to arrive in south africa?</ion-label>
+               
+                   <ion-select value="jan" [(ngModel)]="historyAns1">
+                       <ion-option value="jan">jan van riebeeck</ion-option>
+                       <ion-option >jan smuts</ion-option>
+                             </ion-select>
+               </ion-item>
+        
+               
+               
+                <ion-item>
+                        <ion-label>what was the diamond name found in pretoria in 1905?</ion-label>
+                  
+                   <ion-select value="cullinan" [(ngModel)]="historyAns2">
+                        <ion-option value="cullinan">cullinan</ion-option>
+                        <ion-option >themba</ion-option>
+                              </ion-select>
+               </ion-item>
+   
+                 
+               
+                  
+                
+                <ion-item>
+                        <ion-label>who successed shaka zulu to the throne?</ion-label>
+                   
+                   <ion-select value="dingaane" [(ngModel)]="historyAns3">
+                        <ion-option >mhlangana</ion-option>
+                        <ion-option value="dingaane">dingaane</ion-option>
+                              </ion-select>
+               </ion-item>
+      
+                
+                 
+                 <ion-item>
+                        <ion-label>who was in charge of the first anglo-broer war?</ion-label>
+                     
+                     <ion-select value="kruger" [(ngModel)]="historyAns4">
+                            <ion-option >cecil rhodes</ion-option>
+                            <ion-option value="kruger">paul kruger</ion-option>
+                                  </ion-select>
+                 </ion-item>
+                
+                  
+                   
+                   <ion-item>
+                        <ion-label>where did the first white man arrive?</ion-label>
+                     
+                       <ion-select value="goodhope" [(ngModel)]="historyAns5">
+                            <ion-option value="goodhope">cape of good hope</ion-option>
+                            <ion-option >green point</ion-option>
+                                  </ion-select>
+                   </ion-item>
+                   
+                    
+               
+                    <ion-buttons end>
+                   <button ion-button color="secondary" (click)="totalHistoryScores()">submit</button>
+                 </ion-buttons>
+             <p>total:{{totalHistoryScore}}/10</p>
+            
+          </ion-card-content>
+    
+         
+
+
+  
 </ion-content>
